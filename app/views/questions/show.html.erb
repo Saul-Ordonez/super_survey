@@ -1,0 +1,23 @@
+<div class="nameHeaders">
+
+  <h1>Question: <%= @question.query %></h1>
+  <h2>Survey: <%= @survey.title %></h2>
+  <h3>Category: <%= @survey.category %></h3>
+
+  <% form_for(@question) do |f| %>
+    <%= f.radio_button :answer_selected, 'answer1' %>
+    <%= label :answer1, @question.answer1 %>
+    <%= f.radio_button :answer_selected, 'answer2' %>
+    <%= label :answer2, @question.answer2 %>
+    <%= f.radio_button :answer_selected, 'answer3' %>
+    <%= label :answer3, @question.answer3 %>
+  <% end %>
+
+
+  <p><%= link_to "Edit question", edit_survey_question_path(@survey, @question) %></p>
+  <p><%= link_to "Delete question", survey_question_path(@survey, @question),
+    :data => {:confirm => "Are you sure?",
+    :method => "delete"} %></p>
+
+    <p><%= link_to "Return to survey", survey_path(@survey) %></p>
+  </div>
