@@ -4,7 +4,7 @@
   <h2>Survey: <%= @survey.title %></h2>
   <h3>Category: <%= @survey.category %></h3>
 
-  <% form_for(@question) do |f| %>
+  <% form_for [@survey, @question] do |f| %>
     <%= f.radio_button :answer_selected, 'answer1' %>
     <%= label :answer1, @question.answer1 %>
     <%= f.radio_button :answer_selected, 'answer2' %>
