@@ -5,12 +5,13 @@
   <h3>Category: <%= @survey.category %></h3>
 
   <% form_for [@survey, @question] do |f| %>
-    <%= f.radio_button :answer_selected, 'answer1' %>
-    <%= label :answer1, @question.answer1 %>
-    <%= f.radio_button :answer_selected, 'answer2' %>
-    <%= label :answer2, @question.answer2 %>
-    <%= f.radio_button :answer_selected, 'answer3' %>
-    <%= label :answer3, @question.answer3 %>
+    <%= f.radio_button :answer1, 'answer1' %>
+    <%= label :answer_selected, @question.answer1 %>
+    <%= f.radio_button :answer2, 'answer2' %>
+    <%= label :answer_selected, @question.answer2 %>
+    <%= f.radio_button :answer3, 'answer3' %>
+    <%= label :answer_selected, @question.answer3 %>
+    <p><%= f.submit %></p>
   <% end %>
 
 
